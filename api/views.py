@@ -20,7 +20,6 @@ class trainee_record_list(generics.ListCreateAPIView):
     serializer_class = TraineeRecordsSerializer
 
     def perform_create(self, serializer):
-        # Ensure the Trainee field is set when creating a new TraineeRecord
         try:
             discord_id = self.request.data['discord_id']
             trainee = Trainees.objects.get(discord_id=discord_id)
