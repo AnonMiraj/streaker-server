@@ -13,6 +13,6 @@ class TraineeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Trainees
-        fields = ['discord_id', 'discord_pfp', 'last_activity', 'discord_name', 'total_days',
+        fields = ['discord_id', 'discord_pfp', 'discord_name', 'last_activity', 'total_days',
                   'total_problems', 'highest_streak', 'current_streak', 'trainee_records']
         read_only_fields = ['total_days', 'total_problems', 'highest_streak', 'current_streak']
