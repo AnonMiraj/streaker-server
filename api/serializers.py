@@ -15,4 +15,4 @@ class TraineeSerializer(serializers.HyperlinkedModelSerializer):
         model = Trainees
         fields = ['discord_id', 'discord_pfp', 'discord_name', 'last_activity', 'total_days',
                   'total_problems', 'highest_streak', 'current_streak', 'trainee_records']
-        read_only_fields = ['total_days', 'total_problems', 'highest_streak', 'current_streak']
+        read_only_fields = ['last_activity', 'total_days', 'total_problems', 'highest_streak', 'current_streak']
