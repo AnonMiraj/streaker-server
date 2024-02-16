@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-g_12&)qded1!pc5q4(#i+9a@5-*m(z3$)4dm^5uql6zoindjj-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["45.85.146.108", "streaker.api.almiraj.xyz"]
+ALLOWED_HOSTS = ["45.85.146.108", "streaker.api.almiraj.xyz", "127.0.0.1"]
 
 
 # Application definition

@@ -8,11 +8,10 @@ class TraineeRecordsSerializer(serializers.ModelSerializer):
         fields = ['id', 'discord_id', 'post_date', 'message', 'streak', 'today_problems']
 
 
-
 class TraineeSerializer(serializers.HyperlinkedModelSerializer):
     trainee_records = TraineeRecordsSerializer(many=True, read_only=True)
 
     class Meta:
         model = Trainees
-        fields = ['discord_id', 'discord_pfp', 'discord_name', 'total_days',
+        fields = ['discord_id', 'discord_pfp', 'last_activity', 'discord_name', 'total_days',
                   'total_problems', 'highest_streak', 'current_streak', 'trainee_records']
