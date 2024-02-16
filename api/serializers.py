@@ -15,10 +15,4 @@ class TraineeSerializer(serializers.HyperlinkedModelSerializer):
         model = Trainees
         fields = ['discord_id', 'discord_pfp', 'last_activity', 'discord_name', 'total_days',
                   'total_problems', 'highest_streak', 'current_streak', 'trainee_records']
-
-    def create(self, validated_data):
-        validated_data['total_days'] = 0
-        validated_data['total_problems'] = 0
-        validated_data['highest_streak'] = 0
-        validated_data['current_streak'] = 0
-        return super().create(validated_data)
+        read_only_fields = ['total_days', 'total_problems', 'highest_streak', 'current_streak']
