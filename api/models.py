@@ -55,4 +55,4 @@ class TraineeRecords(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.trainee.discord_name + ":" + self.id
+        return self.trainee.discord_name + ":" + self.post_date.strftime("%Y-%m-%d")
