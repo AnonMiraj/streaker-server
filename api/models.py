@@ -3,9 +3,9 @@ from django.utils import timezone
 
 
 class Trainees(models.Model):
-    discord_id = models.TextField(primary_key=True, max_length=30)
-    discord_pfp = models.TextField(max_length=150)
-    discord_name = models.TextField(max_length=30)
+    discord_id = models.TextField(primary_key=True, max_length=50)
+    discord_pfp = models.TextField(max_length=550)
+    discord_name = models.TextField(max_length=50)
     last_activity = models.DateTimeField(default=timezone.now)
 
     total_days = models.PositiveIntegerField(default=0)
@@ -26,9 +26,9 @@ class Trainees(models.Model):
 
 
 class TraineeRecords(models.Model):
-    discord_id = models.TextField(max_length=30)
+    discord_id = models.TextField(max_length=50)
     post_date = models.DateTimeField(default=timezone.now)
-    message = models.TextField(max_length=150)
+    message = models.TextField(max_length=550)
     streak = models.PositiveIntegerField(default=0)
     today_problems = models.PositiveIntegerField(default=0)
 
@@ -55,4 +55,4 @@ class TraineeRecords(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.trainee.discord_name
+        return self.trainee.discord_name + ":" + self.id
