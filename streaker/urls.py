@@ -9,6 +9,9 @@ urlpatterns = [
     path('records/', views.TraineeRecordListCreateView.as_view(), name='record-list'),
     path('records/<int:pk>/', views.TraineeRecordDetailUpdateDestroyView.as_view(), name='record-detail'),
     path('admin/', admin.site.urls),
+    path('oauth2', views.home, name='oauth2'),
+    path('oauth2/login', views.discord_login, name='oauth2_login'),
+    path('oauth2/login/redirect', views.discord_login_redirect, name='oauth2_login_redirect')
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

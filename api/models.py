@@ -1,7 +1,5 @@
-
 from django.db import models
 from django.utils import timezone
-
 
 class Trainee(models.Model):
     discord_id = models.CharField(primary_key=True, max_length=50)
@@ -58,3 +56,14 @@ class TraineeRecord(models.Model):
 
     def __str__(self):
         return f"{self.trainee.discord_name}: {self.post_date.strftime('%Y-%m-%d')}"
+
+
+class DiscordUser(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+    discord_tag = models.CharField(max_length=100)
+    avatar = models.CharField(max_length=100)
+    public_flags = models.IntegerField()
+    flags = models.IntegerField()
+    locale = models.CharField(max_length=100)
+    mfa_enabled = models.BooleanField()
+    last_login = models.DateTimeField()
